@@ -94,5 +94,30 @@ body {
   margin-right: 40px;
 }
 
+.arrowNav {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  justify-content: space-between;
+}
 
+.prev,
+.next {
+  cursor: pointer;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+.next{
+  float: right;
+}
 
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
