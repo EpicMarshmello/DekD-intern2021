@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Vanilla Image Carousel</title>
+    <title>Image Carousel</title>
 </head>
 
 <body>
     <div class="mainContainer">
-        <div class="arrow-button">LL</div>
-        <div class="imgSlide">
-            <img src="img/img1.jpg" alt="">
+        <div class="arrow-button" onclick="changeImg(0)"><img src="img/arrow.png"></div>
+        <div class="Container">
+            <div class="imgSlide">
+                <img id="img-show" src="img/img1.jpg" alt="">
+            </div>
+            <div id="dot-container">
+                <div id="dot1" onclick="toImg(1)"></div>
+                <div id="dot2" onclick="toImg(2)"></div>
+                <div id="dot3" onclick="toImg(3)"></div>
+                <div id="dot4" onclick="toImg(4)"></div>
+                <div id="dot5" onclick="toImg(5)"></div>
+            </div>
         </div>
-        <div class="arrow-button">RR</div>
+        <div class="arrow-button" onclick="changeImg(1)"><img style="transform: scaleX(-1);" src="img/arrow.png"></div>
     </div>
 
 
+    <script src="script.js"></script>
 
 </body>
 
