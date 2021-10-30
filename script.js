@@ -1,38 +1,30 @@
 var imgNow = 1;
-dotUpdate(1);
+imgUpdate(1);
 
 function changeImg(direction) {
-  if (direction == 0) {
-    imgNow--;
-    if (imgNow < 1) {
+  imgNow = (imgNow + direction) % 6;
+  if (imgNow == 0) {
+    if (direction == -1) {
       imgNow = 5;
-    }
-  }
-
-  if (direction == 1) {
-    imgNow++;
-    if (imgNow > 5) {
+    } else {
       imgNow = 1;
     }
   }
 
-  var imgShow = document.getElementById("img-show");
-  imgShow.src = "img/img" + imgNow + ".jpg";
-
-  dotUpdate(imgNow);
+  imgUpdate(imgNow);
 }
 
 function toImg(num) {
-  var imgShow = document.getElementById("img-show");
-  imgShow.src = "img/img" + num + ".jpg";
-
-  dotUpdate(num);
+  imgNow = num;
+  imgUpdate(imgNow);
 }
 
-function dotUpdate(current) {
+function imgUpdate(imgNow) {
+  var imgShow = document.getElementById("img-show");
+  imgShow.src = "img/img" + imgNow + ".jpg";
   for (let i = 1; i <= 5; i++) {
     document.getElementById("dot" + i).style.backgroundColor = "silver";
   }
-  var currentDot = document.getElementById("dot" + current);
+  var currentDot = document.getElementById("dot" + imgNow);
   currentDot.style.backgroundColor = "gray";
 }
